@@ -7,6 +7,14 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+
+def base(request):
+    return render(request, 'base.html')
+
+
+def home(request):
+    return render(request, 'core/home.html')
+
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -37,9 +45,3 @@ def LOGIN(request):
             return HttpResponse("Username or password is incorrect!")
 
     return render(request, 'registration/login.html')
-def base(request):
-    return render(request, 'base.html')
-
-
-def home(request):
-    return render(request, 'core/home.html')
