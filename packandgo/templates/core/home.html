@@ -7,7 +7,7 @@
     <div id="header-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="w-100" src="{% static 'images/carousel-1.jpg' %}" alt="Image">
+                <img class="w-100" src="{% static 'images/crsl1.jpg' %}" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
                         <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="w-100" src="{% static 'images/carousel-2.jpg' %}" alt="Image">
+                <img class="w-100" src="{% static 'images/crsl2.jpg' %}" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
                         <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
@@ -48,72 +48,72 @@
             <!-- Destination 1 -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card border-0 shadow">
-                    <img class="card-img-top" src="{% static 'images/destination-1.jpg' %}" alt="United States">
+                    <img class="card-img-top" src="{% static 'images/dst1.jpg' %}" alt="United States">
                     <div class="card-body text-center">
                         <h5 class="card-title">United States</h5>
                         <p class="card-text">Explore 100 amazing cities across the United States.</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                        <a href="#" class="btn btn-outline-primary">Book Trip</a>
+                        <a href="{% url 'tour_list' %}" class="btn btn-primary">View Details</a>
+                     
                     </div>
                 </div>
             </div>
             <!-- Destination 2 -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card border-0 shadow">
-                    <img class="card-img-top" src="{% static 'images/destination-2.jpg' %}" alt="United Kingdom">
+                    <img class="card-img-top" src="{% static 'images/dst2.jpg' %}" alt="United Kingdom">
                     <div class="card-body text-center">
                         <h5 class="card-title">United Kingdom</h5>
                         <p class="card-text">Explore 100 amazing cities across the United Kingdom.</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                        <a href="#" class="btn btn-outline-primary">Book Trip</a>
+                        <a href="{% url 'tour_list' %}" class="btn btn-primary">View Details</a>
+              
                     </div>
                 </div>
             </div>
             <!-- Destination 3 -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card border-0 shadow">
-                    <img class="card-img-top" src="{% static 'images/destination-3.jpg' %}" alt="Australia">
+                    <img class="card-img-top" src="{% static 'images/dst3.jpg' %}" alt="Australia">
                     <div class="card-body text-center">
                         <h5 class="card-title">Australia</h5>
                         <p class="card-text">Explore 100 amazing cities across Australia.</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                        <a href="#" class="btn btn-outline-primary">Book Trip</a>
+                        <a href="{% url 'tour_list' %}" class="btn btn-primary">View Details</a>
+                      
                     </div>
                 </div>
             </div>
             <!-- Destination 4 -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card border-0 shadow">
-                    <img class="card-img-top" src="{% static 'images/destination-4.jpg' %}" alt="India">
+                    <img class="card-img-top" src="{% static 'images/dst4.jpg' %}" alt="India">
                     <div class="card-body text-center">
                         <h5 class="card-title">India</h5>
                         <p class="card-text">Explore 100 amazing cities across India.</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                        <a href="#" class="btn btn-outline-primary">Book Trip</a>
+                        <a href="{% url 'tour_list' %}" class="btn btn-primary">View Details</a>
+                     
                     </div>
                 </div>
             </div>
             <!-- Destination 5 -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card border-0 shadow">
-                    <img class="card-img-top" src="{% static 'images/destination-5.jpg' %}" alt="South Africa">
+                    <img class="card-img-top" src="{% static 'images/dst5.jpg' %}" alt="South Africa">
                     <div class="card-body text-center">
                         <h5 class="card-title">South Africa</h5>
                         <p class="card-text">Explore 100 amazing cities across South Africa.</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                        <a href="#" class="btn btn-outline-primary">Book Trip</a>
+                        <a href="{% url 'tour_list' %}" class="btn btn-primary">View Details</a>
+                       
                     </div>
                 </div>
             </div>
             <!-- Destination 6 -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card border-0 shadow">
-                    <img class="card-img-top" src="{% static 'images/destination-6.jpg' %}" alt="Indonesia">
+                    <img class="card-img-top" src="{% static 'images/dst6.jpg' %}" alt="Indonesia">
                     <div class="card-body text-center">
                         <h5 class="card-title">Indonesia</h5>
                         <p class="card-text">Explore 100 amazing cities across Indonesia.</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                        <a href="#" class="btn btn-outline-primary">Book Trip</a>
+                        <a href="{% url 'tour_list' %}" class="btn btn-primary">View Details</a>
+                       
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-6">
                             <div class="card border-0 shadow text-center">
-                                <img class="rounded-circle mx-auto mt-4" src="{% static 'images/testimonial-1.jpg' %}" style="width: 100px; height: 100px;" alt="Client Image">
+                                <img class="rounded-circle mx-auto mt-4" src="{% static 'images/t1.jpg' %}" style="width: 100px; height: 100px;" alt="Client Image">
                                 <div class="card-body">
                                     <p class="card-text">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.</p>
                                     <h5 class="card-title">Client Name</h5>
@@ -152,7 +152,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-6">
                             <div class="card border-0 shadow text-center">
-                                <img class="rounded-circle mx-auto mt-4" src="{% static 'images/testimonial-2.jpg' %}" style="width: 100px; height: 100px;" alt="Client Image">
+                                <img class="rounded-circle mx-auto mt-4" src="{% static 'images/t2.jpg' %}" style="width: 100px; height: 100px;" alt="Client Image">
                                 <div class="card-body">
                                     <p class="card-text">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.</p>
                                     <h5 class="card-title">Client Name</h5>
@@ -167,7 +167,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-6">
                             <div class="card border-0 shadow text-center">
-                                <img class="rounded-circle mx-auto mt-4" src="{% static 'images/testimonial-3.jpg' %}" style="width: 100px; height: 100px;" alt="Client Image">
+                                <img class="rounded-circle mx-auto mt-4" src="{% static 'images/t3.jpg' %}" style="width: 100px; height: 100px;" alt="Client Image">
                                 <div class="card-body">
                                     <p class="card-text">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.</p>
                                     <h5 class="card-title">Client Name</h5>
@@ -177,22 +177,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Slide 4 -->
-                <div class="carousel-item">
-                    <div class="row justify-content-center">
-                        <div class="col-md-6">
-                            <div class="card border-0 shadow text-center">
-                                <img class="rounded-circle mx-auto mt-4" src="{% static 'images/testimonial-4.jpg' %}" style="width: 100px; height: 100px;" alt="Client Image">
-                                <div class="card-body">
-                                    <p class="card-text">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.</p>
-                                    <h5 class="card-title">Client Name</h5>
-                                    <small class="text-muted">Profession</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                
             <!-- Carousel Controls -->
             <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

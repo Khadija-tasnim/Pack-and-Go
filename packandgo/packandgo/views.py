@@ -7,6 +7,8 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+from userprofile.models import UserProfile
 
 def base(request):
     return render(request, 'base.html')
@@ -17,17 +19,52 @@ def home(request):
 
 def signup(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Your account has been created successfully!')
-            return redirect('login')  # Redirect to login page after successful signup
-        else:
-            messages.error(request, 'Please correct the errors below.')
-    else:
-        form = UserCreationForm()
+        uname = request.POST.get('username')
+        email = request.POST.get('email')
+        pw1 = request.POST.get('password1')
+        pw2 = request.POST.get('password2')
+        full_name = request.POST.get('full_name')
+        phone_number = request.POST.get('phone_number')
+        address = request.POST.get('address')
 
-    return render(request, 'registration/signup.html', {'form': form})
+
+        if not uname or not email or not pw1 or not pw2:
+            messages.error(request, "All fields are required.")
+            return render(request, 'registration/signup.html')
+
+        if pw1 != pw2:
+            messages.error(request, "Passwords do not match.")
+            return render(request, 'registration/signup.html')
+
+        if User.objects.filter(username=uname).exists():
+            messages.error(request, "Username already taken.")
+            return render(request, 'registration/signup.html')
+
+        if User.objects.filter(email=email).exists():
+            messages.error(request, "Email already registered.")
+            return render(request, 'registration/signup.html')
+
+        try:
+
+            my_user = User.objects.create_user(username=uname, email=email, password=pw1)
+            my_user.save()
+
+            user_profile = UserProfile.objects.create(
+                user=my_user,
+                full_name=full_name,
+                phone_number=phone_number,
+                address=address
+            )
+            user_profile.save()
+
+            messages.success(request, "Account created successfully. You can now log in.")
+            return redirect('login')
+
+        except Exception as e:
+            messages.error(request, f"An error occurred while creating the account: {str(e)}")
+            return render(request, 'registration/signup.html')
+
+    return render(request, 'registration/signup.html')
 
 def LOGOUT(request):
     logout(request)

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center">Order Details</h1>
+    <p><strong>Booking ID:</strong> {{ Booking.id }}</p>
+    <p><strong>Booking Date:</strong> {{ Booking.created_at }}</p>
+    <p><strong>Total Price:</strong> tk{{ Booking.total_price }}</p>
+    <p><strong>Status:</strong> {{ Booking.status }}</p>
+
+    <h2>Items in Booking</h2>
+    <ul>
+        {% for item in booking.items %}
+            <li>{{ item.quantity }} x {{ item.tour.name }} - tk{{ item.price_per_day }} each</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

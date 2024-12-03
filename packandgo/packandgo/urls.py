@@ -32,6 +32,10 @@ urlpatterns = [
     path('login/', views.LOGIN, name='login'),
     path('logout/',views.LOGOUT,name='logout'),
     path('profile/', include('userprofile.urls')),
+    path('tour/', include('tour.urls')),
+
+
+
 ]
 
 if settings.DEBUG:

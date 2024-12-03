@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center">Booking Confirmation</h1>
+    <p>Thank you, {{ order.user.username }}! Your booking has been placed successfully.</p>
+    <p>Booking Number: {{ booking.id }}</p>
+    <p>Total Price: tk{{ booking.total_price }}</p>
+    <h2>Booking Details:</h2>
+    <ul>
+        {% for item in booking.items.all %}
+            <li>{{ item.quantity }} x {{ item.tour.name }} - tk{{ item.price_per_day }} each</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cart_view' %}" class="btn btn-primary">Back to Cart</a>
+</div>
+{% endblock %}
